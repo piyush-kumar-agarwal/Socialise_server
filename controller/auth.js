@@ -61,7 +61,7 @@ exports.register = asyncHandler(async (req, res, next) => {
 
     await user.save({ validateBeforeSave: false });
 
-    const verificationUrl = `https://musical-monstera-20ce50.netlify.app/emailverification/${token}`;
+    const verificationUrl = `https://piyush-socialise.netlify.app/emailverification/${token}`;
 
     const message = `Please verify your email by clicking on the link below: \n\n ${verificationUrl}`;
 
@@ -90,7 +90,7 @@ exports.resendEmailVerification = asyncHandler(async (req, res, next) => {
 
     await user.save({ validateBeforeSave: false });
 
-    const verificationUrl = `https://musical-monstera-20ce50.netlify.app/emailverification/${token}`;
+    const verificationUrl = `https://piyush-socialise.netlify.app/emailverification/${token}`;
 
     const message = `Please verify your email by clicking on the link below: \n\n ${verificationUrl}`;
 
@@ -205,7 +205,7 @@ exports.updateUserCrediantials = asyncHandler(async (req, res, next) => {
         user.unverifiedEmail = req.body.email;
         user.isVerified = false;
         await user.save({ validateBeforeSave: false });
-        const verificationUrl = `https://musical-monstera-20ce50.netlify.app/editemailverification/${token}`;
+        const verificationUrl = `https://piyush-socialise.netlify.app/editemailverification/${token}`;
 
         const message = `Please verify your email by clicking on the link below: \n\n ${verificationUrl}`;
 
@@ -238,7 +238,7 @@ exports.forgotPasswordToken = asyncHandler(async (req, res, next) => {
     }
 
     const resetToken = user.getResetPasswordToken();
-    const resetUrl = `https://musical-monstera-20ce50.netlify.app/resetpassword/${resetToken}`;
+    const resetUrl = `https://piyush-socialise.netlify.app/resetpassword/${resetToken}`;
 
     await user.save({ validateBeforeSave: false });
 
